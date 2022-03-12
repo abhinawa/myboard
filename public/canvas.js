@@ -84,12 +84,13 @@ canvas.addEventListener("mouseup", (e) => {
 
 undo.addEventListener("click", (e) => {
 
-
-    if (track < undoRedoTracker.length) {
-        track++;
+    
+    if (track > 0) {
+        track--;
     }
+    
     // track action/
-    let trackObj = {
+    let data = {
         trackValue: track,
         undoRedoTracker
 
@@ -97,24 +98,27 @@ undo.addEventListener("click", (e) => {
     }
 
     // action
-    undoRedoCanvas(trackObj);
+    // undoRedoCanvas(trackObj);
+
+    socket.emit("redoUndo",data);
 
 })
 
 
 redo.addEventListener("click", (e) => {
 
-    if (track > 0) {
-        track--;
+    if (track < undoRedoTracker.length-1) {
+        track++;
     }
 
-    let trackObj = {
+    let data = {
         trackValue: track,
         undoRedoTracker
 
 
     }
-    undoRedoCanvas(trackObj);
+    // undoRedoCanvas(trackObj);
+    socket.emit("redoUndo",data);
 
 })
 
@@ -205,4 +209,8 @@ socket.on("drawStroke",(data)=>{
     console.log("data received2");
 
     drawStroke(data);
+})
+
+socket.on("redoUndo",(data)=>{
+    undoRedoCanvas(data);
 })
