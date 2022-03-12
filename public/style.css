@@ -1,0 +1,179 @@
+*{
+    box-sizing :border-box;
+
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.options-cont{
+
+    height: 2rem;
+    width: 2rem;
+    background-color: lightblue;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 2rem;
+
+}
+.tools-cont{
+    display: flex;
+    height: 3rem;
+    width: 50rem;
+    background-color: lightblue;
+    justify-content: space-around;
+    position: absolute;
+    top: 1rem;
+    left: 25vw;
+ 
+     
+    
+}
+.tools-cont >*{
+    display: block;
+}
+
+/* animation           */
+.scale-tools{
+    animation-name: scale-tools;
+    animation-duration:  0.5s ;
+}
+
+@keyframes scale-tools{
+
+        0%{
+            transform:scale(0.1);
+        }
+        100%{
+            transform:scale(1);
+        }
+}
+
+
+.pencil-tool-cont{
+    height: 5rem;
+    width: 7rem;
+    background-color: lightblue;
+    
+
+    position: absolute;
+    top: 4rem;
+    left: 25vw;
+    border-radius: 5px;
+    /* display: none; */
+}
+
+.pencil-width-cont{
+    /* background-color: lightblue; */
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pencil-width-cont input{
+    width: 80%;
+}
+.pencil-color-cont{
+/* background-color: yellow; */
+height:3rem;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+
+}
+
+.pencil-color{
+    width: 1.5rem;
+    height: 2rem;
+    border-radius: 50%;
+
+}
+.black{
+    background-color: black;
+
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.eraser-tool-cont{
+    background-color: lightblue;
+    height: 2rem;
+    width: 7rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 4rem;
+    left: 36vw;
+    /* display: none; */
+
+}
+.eraser-tool-cont input{
+    width: 80%;
+}
+
+
+/* sticky */
+
+.sticky-cont{
+    height:15rem;
+    width: 15rem;
+    box-shadow: rgb(180, 32, 32);
+
+    position: absolute;
+    top: 15rem;
+    left: 15rem;
+
+}
+
+.header-cont{
+    height: 2rem;
+    background-color: rgb(188, 197, 206);
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+.header-cont > *{
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+
+
+}
+
+.minimize{
+    background-color: green;
+}
+.remove{
+    background-color: red;
+}
+.note-cont{
+    height: calc(100% - 2rem);
+    /* background-color: red; */
+
+    box-shadow: rgb(180, 32, 32);
+
+}
+textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    resize: none;
+    border: none;
+    background-color: rgb(210, 214, 219);
+    
+
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}
+ 
